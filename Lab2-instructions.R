@@ -13,12 +13,17 @@ list.files(path = "Music")
 songnames <- c()
 full.file.location <- c()
 code.to.process <- c()
+song.name.nowav <- c()
 
 for(i in 1:length(album)){
   track.files <- list.files(path = file.paths[album[i]])
   # filter to ensure the files are .wav files
   for(y in 1:length(track.files)){
     songnames = c(songnames, track.files[y])
+    song.name.nowav <- c(song.name.nowav, 
+                         str_sub(songnames[i], 
+                                 start = 1, 
+                                 end = (length(songnames[i])-6)))
     full.file.location <- c(full.file.location, paste(file.paths[album[i]], 
                                                 track.files[y],
                                                 sep = "/"))
@@ -27,19 +32,19 @@ for(i in 1:length(album)){
 (songnames)
 (full.file.location)
 
-song.name.nowav <- c()
+
 
 for(i in 1:length(songnames)){
   song.name.nowav <- c(song.name.nowav, 
-                       str_sub(full.file.location[i], 
+                       str_sub(songnames[i], 
                                start = 1, 
-                               end = (length(full.file.location[i])-6)))
+                               end = (length(songnames[i])-6)))
   
   for (j in 1:length(song.name.nowav)){
     #Step C
-    artist <- str_split_i(song.name.nowav, "-", 2)
-    album <- str_split_i(song.name.nowav, "-", 3)
-    track <- str_split_i(song.name.nowav, "/", 3)
+    artist <- str_split_i(song.name.nowav[j], "-", 2)
+    album <- str_split_i(full.file.location[j], "/", 3)
+    track <- str_split_i(song.name.nowav[j], "-", 3)
     json.artist <- paste(track, ".json", sep = "")
     json.file <- paste(artist, album, json.artist, sep = "-")
     #Step D
