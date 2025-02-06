@@ -39,44 +39,23 @@
 
 \begin{multicols}{2}
 \begin{abstract}
-This document provides a basic template for the 2-page labs we will complete each week. Here, briefly summarize what you did and why it might be helpful. Provide all the top-line conclusions, but avoid providing \emph{all} the details. Results should be limited to ``we show X, Y, and Z."
+Will fill out at the end of the lab once we are done with all the tasks.
 \end{abstract}
 
-\noindent \textbf{Keywords:} What topics does the lab cover concerning class? List 3-4 key terms here, separated by semicolons.
-
 \section{Introduction}
-Provide an overarching summary of what you're talking about. In this section, you introduce the idea to the reader, and your goal is to pull them in. What's the mystery you aim to solve?
-
-You want to provide enough background to understand the context of the work. Specifically, what is the question you are addressing? If it applies, describe what information currently exists about this problem, including citations, and explain how the question you're answering complements this work.
-
-Provide a roadmap of the structure of the paper. 
-
-\subsection{Intro Subsection}
-You might need/want to discuss the topics in subsections. Or, you may have multiple questions.
-
+Through this lab, we will be exploring who contributed more to the song "Allen Town". Was it The Front Bottoms or Manchester Orchestra? To answer the question at hand, we will analyze all the songs released, excluding all joint albums, live albums, and single releases contained in a full album or an Extended Play (EP), by both bands before Allen Town. Through the analysis, we will aim to determine the style of each band which will allow us to compare Allen Town's style with each band. The comparison will allow us to determine which band's style matches the most with Allen Town, leading to the conclusion of which band contributed in a greater quantity.
 
 \section{Methods}
-Describe the data you are working with, if applicable. Describe the specific process you will follow to answer the question at hand. This does not mean you should write something like this.
-\begin{quote}
-\textit{I did this and then I did that and then I did this other thing and then..., and then..., and then...}
-\end{quote}
-Instead, it should provide a clear and concise narrative that flows from the problem specification in the Introduction to how you will approach answering it. This is where I would expect to see some citations for \texttt{R} packages you will use to conduct the statistical analysis reported in the Results section.
 
+To accomplish this lab, we will first need to create a \texttt{batfile.txt} file which we can execute in the command line to produce a \texttt{.json} file. Using the \texttt{R} package \texttt{jsonlite} \citep{jsonlite} we will gather all relevant information needed, such as tempo in beats per minute, musical key) or musical mode, to analyze the similarties between the each band's style and Allen Town's style. The production of the \texttt{.json} file from a \texttt{batfile.txt} file will be carried out in future portions of this lab. 
 
-\subsection{Methods Subsection}
-Much like the Introduction, subsections can be helpful for the Methods section. For example, you might describe data collection and the statistical analyses of the collected data in different subsections. Or, you may have different questions that require distinct methods. 
+To create the \texttt{batfile.txt} file, I downloaded all the given songs which were assorted by artist with a sub folder for each album. Each album folder contains all the songs in that given album. We retrieved the artist name, album name, and each track's name from the file path to create a file name for each song's \texttt{.json} file. Each song's file path and \texttt{.json} file name were pasted into an excuatble \texttt{batfile.txt} file which will be used to create the necesary \texttt{.json} file for each song.
 
 \section{Results}
-Tie together the Introduction -- where you introduce the problem at hand -- and the methods --  what you propose to do to answer the question. Present your data, the results of your analyses, and how each reported aspect contributes to answering the question. This section should include table(s), statistic(s), and graphical displays. Make sure to put the results in a sensible order and that each result contributes a logical and developed solution. It should not just be a list. Avoid being repetitive. 
-
-\subsection{Results Subsection}
-Subsections can be helpful for the Results section, too. This can be particularly helpful if you have different questions to answer. 
-
+No results yet.
 
 \section{Discussion}
- You should objectively evaluate the evidence you found in the data. Do not embellish or wish-terpet (my made-up phase for making an interpretation you, or the researcher, wants to be true without the data \emph{actually} supporting it). Connect your findings to the existing information you provided in the Introduction.
-
-Finally, provide some concluding remarks that tie together the entire paper. Think of the last part of the results as abstract-like. Tell the reader what they just consumed -- what's the takeaway message?
+No results yet to analyze for a discussion.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography
