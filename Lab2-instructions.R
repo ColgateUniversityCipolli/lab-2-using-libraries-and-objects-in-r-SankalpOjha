@@ -28,16 +28,36 @@ for(i in 1:length(album)){
 (full.file.location)
 
 song.name.nowav <- c()
-song.name.justtrack <- c()
 
 for(i in 1:length(songnames)){
-  song.name.nowav <- c(song.name.nowav, str_sub(full.file.location[i], start = 1, 
+  song.name.nowav <- c(song.name.nowav, 
+                       str_sub(full.file.location[i], 
+                               start = 1, 
                                end = (length(full.file.location[i])-6)))
-  song.name.justtrack <- c(song.name.justtrack, 
-                           str_split_1(str_sub(song.name.nowav[i], 
-                                               start = 1,
-                                               end = (length(song.name.nowav[i])-6)),
-                                               "-"))
+  
+  for (j in 1:length(song.name.nowav)){
+    #Step C
+    artist <- str_split_i(song.name.nowav, "-", 2)
+    album <- str_split_i(song.name.nowav, "-", 3)
+    track <- str_split_i(song.name.nowav, "/", 3)
+    json.artist <- paste(track, ".json", sep = "")
+    json.file <- paste(artist, album, json.artist, sep = "-")
+    #Step D
+    final <- paste("streaming_extractor_music.exe", " ", 
+                   '"', full.file.location, '"', " ", '"', json.file,
+                   '"', sep = "")
+    code.to.process = c(code.to.process, final)
+  }
 }
 (song.name.nowav)
-(song.name.justtrack)
+
+writeLines(code.to.process, "batfile.txt")
+
+
+
+
+
+
+
+
+
